@@ -411,29 +411,83 @@ box-shadow:0 10px 30px rgba(0,0,0,.1);
 
 }
 
-.donate-btn{
+/* Donate */
+    .donate-section {
+      text-align: center;
+      background: #fff;
+      padding: 2rem;
+      margin: 2rem auto;
+      border-radius: 10px;
+      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .donate-section button {
+      background: #e912a9;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .donate-section button:hover {
+      background: #c00790;
+    }
 
-display:none;
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #0c0a85;
+      color: white;
+      padding: 1rem;
+    }
+    footer{
+
+    background:#0f3d7c;
+    color:#fff;
+
+    text-align:center;
+
+    padding:25px 20px;
+
+    font-size:16px;
+
+    letter-spacing:.5px;
+
+}
+
+footer p{
+
+    margin:0;
+
+}
+
+footer a{
+
+    color:#F8BBD0;
+    text-decoration:none;
+    font-weight:600;
+
+}
+
+footer a:hover{
+
+    text-decoration:underline;
+
+}
+
+@media(max-width:768px){
+
+footer{
+
+    font-size:14px;
+    padding:20px 15px;
 
 }
 
 }
 
-@keyframes fade{
-
-from{
-
-opacity:0;
-transform:translateY(-15px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
 
 
 }
@@ -457,21 +511,16 @@ transform:translateY(0);
 <nav id="navbar">
 
 <ul>
-
-<li><a href="#" class="active">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Programs</a></li>
-<li><a href="#">Gallery</a></li>
-<li><a href="#">Get Involved</a></li>
-<li><a href="#">Contact</a></li>
-
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about-us.html">About Us</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="get-involved.html">Get Involved</a></li>
+    <li><a href="contact.html">Contact</a></li>
 </ul>
 
 </nav>
 
-<a href="#" class="donate-btn">
-<i class="fa-solid fa-heart"></i> Donate
-</a>
 
 <!-- Mobile Menu Button -->
 
@@ -498,12 +547,12 @@ EMPOWER • NURTURE • TRANSFORM
 </p>
 
 <h1>
-The future of every nation<br>
+The future of every Nation<br>
 <span>is written in the lives of its youth. </span>
 </h1>
 
 <p>
-Through innovative community-based initiatives, we equip children and young people with the knowledge, skills, opportunities, and support they need to thrive and become agents of positive change.
+Through innovative community-based initiatives, we equip young people with the knowledge, skills, opportunities, and support they need to thrive and become agents of positive change.
 </p>
 
 <div class="buttons">
@@ -537,7 +586,7 @@ Learn More <i class="fa-solid fa-arrow-right"></i>
 <h2>Our <span>Programs</span></h2>
 
 <p>
-We implement diverse programs that empower children and youth to reach their full potential and create positive change.
+We implement diverse programs that empower young people to reach their full potential and create positive change.
 </p>
 
 <div class="cards">
@@ -581,6 +630,22 @@ We implement diverse programs that empower children and youth to reach their ful
 </div>
 
 </section>
+<!--==========================
+        SUPPORT CARD
+===========================-->
+
+<section class="donate-section">
+    <h3>Support the Cause</h3>
+    <p>Your support helps us educate, mentor, and empower vulnerable teens with dignity and hope.</p>
+    <button onclick="window.location.href='mailto:info@mtotonijamii.org'">💗 Donate Now</button>
+  </section>
+  <footer>
+
+    <p>
+        &copy; 2026 Mtoto Ni Jamii Foundation. All Rights Reserved.
+    </p>
+
+</footer>
 <script>
 
 function toggleMenu(){
