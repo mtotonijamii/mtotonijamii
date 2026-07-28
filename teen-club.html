@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Teen Club | Mtoto Ni Jamii Foundation</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+background:#0d1117;
+color:white;
+overflow-x:hidden;
+
+}
+
+/*====================
+COLORS
+=====================*/
+
+:root{
+
+--primary:#6C63FF;
+--secondary:#00B8FF;
+--pink:#FF5C8A;
+--green:#2ECC71;
+--white:#ffffff;
+--dark:#0d1117;
+
+}
+
+/*====================
+NAVBAR
+=====================*/
+
+header{
+
+position:fixed;
+width:100%;
+top:0;
+left:0;
+z-index:1000;
+
+}
+
+.navbar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 8%;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(14px);
+
+border-bottom:1px solid rgba(255,255,255,.15);
+
+transition:.4s;
+
+}
+
+.logo{
+
+font-family:'Poppins',sans-serif;
+
+font-size:1.6rem;
+
+font-weight:800;
+
+letter-spacing:1px;
+
+color:white;
+
+}
+
+.logo span{
+
+color:var(--pink);
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:35px;
+
+list-style:none;
+
+}
+
+nav ul li a{
+
+text-decoration:none;
+
+color:white;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+color:var(--secondary);
+
+}
+
+.join-btn{
+
+padding:12px 26px;
+
+background:linear-gradient(45deg,var(--primary),var(--pink));
+
+border-radius:40px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+transition:.4s;
+
+}
+
+.join-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 0 20px rgba(108,99,255,.5);
+
+}
+
+.menu-btn{
+
+display:none;
+
+font-size:28px;
+
+cursor:pointer;
+
+}
+
+/*====================
+HERO
+=====================*/
+
+/*====================
+HERO
+=====================*/
+
+.hero{
+
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:80vh;
+    overflow:hidden;
+    text-align:center;
+    padding:120px 8% 80px;
+
+}
+
+.hero video{
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center center;
+
+    z-index:-3;
+
+}
+
+.overlay{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(0,0,0,.75),
+
+rgba(22,33,62,.55),
+
+rgba(0,184,255,.25)
+
+);
+
+z-index:-2;
+
+}
+
+.hero-content{
+
+max-width:900px;
+
+padding:20px;
+
+animation:fadeUp 1.2s ease;
+
+}
+
+.hero-content h4{
+
+font-size:18px;
+
+letter-spacing:3px;
+
+color:var(--secondary);
+
+margin-bottom:15px;
+
+font-family:'Poppins';
+
+}
+
+.hero-content h1{
+
+font-size:70px;
+
+font-family:'Poppins';
+
+font-weight:800;
+
+margin-bottom:20px;
+
+line-height:1.1;
+
+}
+
+.hero-content p{
+
+font-size:20px;
+
+line-height:1.8;
+
+margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.btn-primary{
+
+background:linear-gradient(45deg,var(--primary),var(--pink));
+
+padding:16px 36px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+transition:.4s;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 0 25px rgba(255,92,138,.6);
+
+}
+
+.btn-secondary{
+
+padding:16px 36px;
+
+border:2px solid white;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+transition:.4s;
+
+}
+
+.btn-secondary:hover{
+
+background:white;
+
+color:#111;
+
+}
+
+/*====================
+SCROLL INDICATOR
+=====================*/
+
+.scroll{
+
+position:absolute;
+
+bottom:25px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:32px;
+
+animation:bounce 2s infinite;
+
+color:white;
+
+}
+
+/*====================
+ANIMATIONS
+=====================*/
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translate(-50%,0);
+
+}
+
+50%{
+
+transform:translate(-50%,10px);
+
+}
+
+}
+
+/*====================
+RESPONSIVE
+=====================*/
+
+@media(max-width:991px){
+
+.hero-content h1{
+
+font-size:55px;
+
+}
+
+.hero-content p{
+
+font-size:18px;
+
+}
+
+nav{
+
+position:absolute;
+
+top:85px;
+
+right:-100%;
+
+background:#111827;
+
+width:260px;
+
+transition:.4s;
+
+padding:30px;
+
+border-radius:15px;
+
+}
+
+nav.active{
+
+right:20px;
+
+}
+
+nav ul{
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+.menu-btn{
+
+display:block;
+
+}
+
+.join-btn{
+
+display:none;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+
+font-size:42px;
+
+}
+
+.hero-content p{
+
+font-size:17px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.logo{
+
+font-size:1.3rem;
+
+}
+
+}
+/*==========================
+INTRO SECTION
+==========================*/
+
+.intro{
+
+padding:120px 8%;
+background:white;
+color:#333;
+
+}
+
+.intro-container{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+
+}
+
+.intro-image img{
+
+width:100%;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+
+}
+
+.intro-text span{
+
+color:#6C63FF;
+font-weight:700;
+letter-spacing:2px;
+
+}
+
+.intro-text h2{
+
+font-family:'Poppins';
+font-size:48px;
+margin:20px 0;
+
+}
+
+.intro-text p{
+
+line-height:1.9;
+margin-bottom:20px;
+
+}
+
+/*==========================
+ACTIVITIES
+==========================*/
+
+.activities{
+
+padding:120px 8%;
+background:#f5f8fc;
+
+}
+
+.section-title{
+
+text-align:center;
+max-width:700px;
+margin:auto auto 70px;
+
+}
+
+.section-title h5{
+
+color:#6C63FF;
+letter-spacing:3px;
+
+}
+
+.section-title h2{
+
+font-size:50px;
+font-family:'Poppins';
+margin:20px 0;
+color:#111;
+
+}
+
+.section-title p{
+
+color:#666;
+line-height:1.8;
+
+}
+
+.activity-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
+}
+
+.activity-card{
+
+position:relative;
+overflow:hidden;
+border-radius:25px;
+height:340px;
+cursor:pointer;
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+}
+
+.activity-card img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+transition:1s;
+
+}
+
+.activity-overlay{
+
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:30px;
+background:linear-gradient(
+transparent,
+rgba(0,0,0,.9)
+);
+
+color:white;
+
+transition:.5s;
+
+}
+
+.activity-overlay h3{
+
+font-family:'Poppins';
+margin-bottom:12px;
+
+}
+
+.activity-card:hover img{
+
+transform:scale(1.15);
+
+}
+
+.activity-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.activity-card{
+
+transition:.4s;
+
+}
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:991px){
+
+.intro-container{
+
+grid-template-columns:1fr;
+
+}
+
+.intro-text{
+
+text-align:center;
+
+}
+
+.intro-text h2{
+
+font-size:38px;
+
+}
+
+.section-title h2{
+
+font-size:38px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.activities,
+.intro{
+
+padding:80px 6%;
+
+}
+
+.activity-card{
+
+height:300px;
+
+}
+
+}
+/*==========================
+FOOTER
+==========================*/
+
+.footer{
+
+    background:linear-gradient(135deg,#111827,#1f2937);
+    color:#fff;
+    text-align:center;
+    padding:70px 20px 30px;
+    overflow:hidden;
+
+}
+
+.footer-title{
+
+    font-family:'Poppins',sans-serif;
+    font-size:2.3rem;
+    font-weight:700;
+    margin-bottom:15px;
+    color:#ffffff;
+    animation:floatText 3s ease-in-out infinite;
+
+}
+
+.footer-text{
+
+    font-size:1rem;
+    color:#d1d5db;
+    margin-bottom:30px;
+    letter-spacing:1px;
+
+}
+
+.footer-line{
+
+    width:100px;
+    height:4px;
+    background:linear-gradient(90deg,#6C63FF,#FF5C8A);
+    margin:0 auto 25px;
+    border-radius:10px;
+    animation:expandLine 2.5s ease-in-out infinite;
+
+}
+
+.copyright{
+
+    font-size:0.9rem;
+    color:#9ca3af;
+
+}
+
+/*==========================
+FOOTER ANIMATIONS
+==========================*/
+
+@keyframes floatText{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes expandLine{
+
+    0%{
+
+        width:70px;
+
+    }
+
+    50%{
+
+        width:130px;
+
+    }
+
+    100%{
+
+        width:70px;
+
+    }
+
+}
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media(max-width:768px){
+
+    .footer{
+
+        padding:60px 15px 25px;
+
+    }
+
+    .footer-title{
+
+        font-size:1.8rem;
+
+    }
+
+    .footer-text{
+
+        font-size:0.95rem;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+
+Teen<span>Club</span>
+
+</div>
+
+<nav id="menu">
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#">About</a></li>
+
+<li><a href="#">Activities</a></li>
+
+<li><a href="#">Gallery</a></li>
+
+<li><a href="#">Join</a></li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<a href="#" class="join-btn">
+
+Join Club
+
+</a>
+
+<div class="menu-btn" id="menuBtn">
+
+<i class="fa-solid fa-bars"></i>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<video autoplay muted loop playsinline>
+
+<source src="videos/teenclub.mp4" type="video/mp4">
+
+Your browser does not support HTML5 video.
+
+</video>
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h4>MTOTO NI JAMII FOUNDATION</h4>
+
+<h1>Teen Club</h1>
+
+<p>
+
+Teen Club is a vibrant community where young people are free to dream,
+create, learn, connect and lead. Whether you're passionate about sports,
+music, business or simply looking for lifelong friends,
+you'll find your place here.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="btn-primary">
+
+Join the Club
+
+</a>
+
+<a href="#" class="btn-secondary">
+
+Explore Activities
+
+</a>
+
+</div>
+
+</div>
+
+<div class="scroll">
+
+<i class="fa-solid fa-angle-down"></i>
+
+</div>
+
+</section>
+<!-- ==========================
+THIS IS YOUR SPACE
+=========================== -->
+
+<section class="intro">
+
+    <div class="intro-container">
+
+
+        <div class="intro-text">
+
+            <span>WELCOME HOME</span>
+
+            <h2>
+                This Is Your Space
+            </h2>
+
+            <p>
+
+                Teen Club is more than a programme—it's a family where
+                creativity is celebrated, friendships are built and dreams
+                become reality. Here every young person has the freedom to
+                discover new talents, grow in confidence and prepare for a
+                bright future.
+
+            </p>
+
+            <p>
+
+                Whether you enjoy football, music, dancing, technology,
+                entrepreneurship or simply spending time with positive
+                friends, Teen Club is designed to help you explore your
+                potential in a safe, exciting and inspiring environment.
+
+            </p>
+
+            <a href="#" class="btn-primary">
+                Become a Member
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================
+ACTIVITIES
+=========================== -->
+
+<section class="activities">
+
+<div class="section-title">
+
+<h5>EXPLORE</h5>
+
+<h2>Find Your Passion</h2>
+
+<p>
+
+Every talent deserves a chance to shine.
+Discover activities that inspire creativity,
+leadership and lifelong friendships.
+
+</p>
+
+</div>
+
+<div class="activity-grid">
+
+<div class="activity-card">
+
+<img src="images/music.jpg">
+
+<div class="activity-overlay">
+
+<h3>🎵 Art & Music</h3>
+
+<p>Create, sing, perform and express yourself.</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="images/football.jpg">
+
+<div class="activity-overlay">
+
+<h3>⚽ Football & Sports</h3>
+
+<p>Build teamwork, discipline and confidence.</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="images/dance.jpg">
+
+<div class="activity-overlay">
+
+<h3>💃 Dance</h3>
+
+<p>Move with confidence and creativity.</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="images/modeling.jpg">
+
+<div class="activity-overlay">
+
+<h3>📸 Modelling</h3>
+
+<p>Discover confidence on and off the runway.</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="images/filmmaking.jpg">
+
+<div class="activity-overlay">
+
+<h3>🎬 Film Making</h3>
+
+<p>Tell powerful stories through film.</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="images/enterprenuership.jpg">
+
+<div class="activity-overlay">
+
+<h3>💼 Entrepreneurship</h3>
+
+<p>Transform ideas into successful ventures.</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="images/agribusines.jpg">
+
+<div class="activity-overlay">
+
+<h3>🌱 Agribusiness</h3>
+
+<p>Learn modern farming and innovation.</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="images/adventure.jpg">
+
+<div class="activity-overlay">
+
+<h3>🏕 Adventure</h3>
+
+<p>Camping, hiking and unforgettable experiences.</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="images/networking.jpg">
+
+<div class="activity-overlay">
+
+<h3>🤝 Networking</h3>
+
+<p>Meet mentors and future leaders.</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="images/mentors.jpg">
+
+<div class="activity-overlay">
+
+<h3>⭐ Leadership</h3>
+
+<p>Lead with courage and integrity.</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="images/technology.jpg">
+
+<div class="activity-overlay">
+
+<h3>💻 Technology</h3>
+
+<p>Explore digital skills and innovation.</p>
+
+</div>
+
+</div>
+
+<div class="activity-card">
+
+<img src="images/service.jpg">
+
+<div class="activity-overlay">
+
+<h3>❤️ Community Service</h3>
+
+<p>Make a difference while giving back.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!--=========================
+FOOTER
+==========================-->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h2 class="footer-title">Meet Your Clan</h2>
+
+        <p class="footer-text">
+            Discover your passion • Build friendships • Create your future
+        </p>
+
+        <div class="footer-line"></div>
+
+        <p class="copyright">
+            &copy; 2026 Teen Club | Mtoto Ni Jamii Foundation. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+<script>
+
+const menuBtn=document.getElementById("menuBtn");
+
+const menu=document.getElementById("menu");
+
+menuBtn.onclick=function(){
+
+menu.classList.toggle("active");
+
+}
+
+</script>
+
+</body>
+</html>
