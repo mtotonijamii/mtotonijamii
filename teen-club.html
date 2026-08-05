@@ -707,6 +707,89 @@ height:300px;
 }
 
 }
+/*====================================
+SHOWCASE ANIMATIONS
+====================================*/
+
+.showcase-image img{
+
+    opacity:1;
+    transform:scale(1);
+    transition:
+    opacity .6s ease,
+    transform .8s ease;
+
+}
+
+.showcase-image img.fade{
+
+    opacity:0;
+    transform:scale(1.08);
+
+}
+
+.showcase-content{
+
+    transition:.5s ease;
+
+}
+
+.showcase-content.fade{
+
+    opacity:0;
+    transform:translateY(20px);
+
+}
+
+/* Beautiful hover */
+
+.showcase-container:hover img{
+
+    transform:scale(1.03);
+
+}
+
+/* Button */
+
+.explore-btn i{
+
+    transition:.3s;
+
+}
+
+.explore-btn:hover i{
+
+    transform:translateX(5px);
+
+}
+
+/* Decorative Accent */
+
+.showcase-container{
+
+    position:relative;
+
+}
+
+.showcase-container::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:8px;
+
+    height:100%;
+
+    background:#6C63FF;
+
+    transition:.5s;
+
+}
 /*==========================
 FOOTER
 ==========================*/
@@ -830,6 +913,392 @@ RESPONSIVE
         font-size:0.95rem;
 
     }
+
+}
+/*===============================
+SHOWCASE SECTION
+================================*/
+
+.showcase{
+
+padding:100px 8%;
+background:#f8fafc;
+
+}
+
+
+.showcase-heading{
+
+text-align:center;
+max-width:750px;
+margin:0 auto 60px;
+
+}
+
+
+.showcase-heading span{
+
+color:#6C63FF;
+font-weight:700;
+letter-spacing:3px;
+
+}
+
+
+.showcase-heading h2{
+
+font-family:'Poppins',sans-serif;
+font-size:3rem;
+color:#111827;
+margin:20px 0;
+
+}
+
+
+.showcase-heading p{
+
+color:#6b7280;
+line-height:1.8;
+
+}
+
+
+
+.showcase-container{
+
+display:grid;
+grid-template-columns:1.2fr 1fr;
+
+background:white;
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:0 20px 60px rgba(0,0,0,.12);
+
+position:relative;
+
+--accent-color:#6C63FF;
+
+}
+
+
+
+.showcase-container::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+top:0;
+
+width:8px;
+
+height:100%;
+
+background:var(--accent-color);
+
+transition:.5s;
+
+}
+
+
+
+/* IMAGE */
+
+.showcase-image{
+
+height:560px;
+overflow:hidden;
+
+}
+
+
+.showcase-image img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+transition:
+opacity .5s ease,
+transform .8s ease;
+
+}
+
+
+
+.showcase-image img.fade{
+
+opacity:0;
+
+transform:scale(1.08);
+
+}
+
+
+
+/* CONTENT */
+
+.showcase-content{
+
+padding:70px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+transition:.5s;
+
+}
+
+
+
+.showcase-content.fade{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+
+
+.showcase-content h3{
+
+font-family:'Poppins';
+
+font-size:2.3rem;
+
+color:#111827;
+
+margin-bottom:25px;
+
+}
+
+
+
+.showcase-content p{
+
+font-size:1.05rem;
+
+line-height:1.8;
+
+color:#6b7280;
+
+margin-bottom:35px;
+
+}
+
+
+
+.explore-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:12px;
+
+width:max-content;
+
+padding:16px 35px;
+
+border-radius:50px;
+
+background:linear-gradient(
+135deg,
+#6C63FF,
+#FF5C8A
+);
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.4s;
+
+}
+
+
+
+.explore-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 15px 30px rgba(108,99,255,.35);
+
+}
+
+
+
+
+/* CONTROLS */
+
+
+.slider-controls{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+margin-top:55px;
+
+}
+
+
+
+.slider-controls button{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+border:none;
+
+background:#eef2ff;
+
+color:#6C63FF;
+
+cursor:pointer;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+
+.slider-controls button:hover{
+
+background:#6C63FF;
+
+color:white;
+
+}
+
+
+
+.dots{
+
+display:flex;
+
+gap:8px;
+
+}
+
+
+
+.dot{
+
+width:12px;
+
+height:12px;
+
+background:#d1d5db;
+
+border-radius:20px;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+
+
+.dot.active{
+
+width:35px;
+
+background:#6C63FF;
+
+}
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:991px){
+
+
+.showcase-container{
+
+grid-template-columns:1fr;
+
+}
+
+
+.showcase-image{
+
+height:400px;
+
+}
+
+
+.showcase-content{
+
+padding:45px 30px;
+
+text-align:center;
+
+}
+
+
+.explore-btn{
+
+margin:auto;
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.showcase{
+
+padding:70px 5%;
+
+}
+
+
+.showcase-heading h2{
+
+font-size:2.2rem;
+
+}
+
+
+.showcase-content h3{
+
+font-size:1.8rem;
+
+}
+
+
+.slider-controls{
+
+gap:15px;
+
+}
 
 }
 
@@ -990,195 +1459,91 @@ THIS IS YOUR SPACE
 ACTIVITIES
 =========================== -->
 
-<section class="activities">
+<!--=================================
+ FIND YOUR PASSION SHOWCASE
+==================================-->
 
-<div class="section-title">
+<section class="showcase">
 
-<h5>EXPLORE</h5>
+    <div class="showcase-heading">
 
-<h2>Find Your Passion</h2>
+        <span>EXPLORE YOUR WORLD</span>
 
-<p>
+        <h2>Find Your Passion</h2>
 
-Every talent deserves a chance to shine.
-Discover activities that inspire creativity,
-leadership and lifelong friendships.
+        <p>
+            Every talent deserves an opportunity to shine.
+            Discover activities that inspire creativity,
+            leadership and lifelong friendships.
+        </p>
 
-</p>
+    </div>
 
-</div>
+    <div class="showcase-container">
 
-<div class="activity-grid">
+        <!-- LEFT IMAGE -->
 
-<div class="activity-card">
+        <div class="showcase-image">
 
-<img src="images/music.jpg">
+            <img
+                id="activityImage"
+                src="images/music.jpg"
+                alt="Art and Music">
 
-<div class="activity-overlay">
+        </div>
 
-<h3>🎵 Art & Music</h3>
+        <!-- RIGHT CONTENT -->
 
-<p>Create, sing, perform and express yourself.</p>
+        <div class="showcase-content">
 
-</div>
+            <h3 id="activityTitle">
 
-</div>
+                🎵 Art & Music
 
-<div class="activity-card">
+            </h3>
 
-<img src="images/football.jpg">
+            <p id="activityDescription">
 
-<div class="activity-overlay">
+                Create, sing, perform and express yourself through music,
+                instruments, painting, drawing and creative arts.
 
-<h3>⚽ Football & Sports</h3>
+            </p>
 
-<p>Build teamwork, discipline and confidence.</p>
+            <a href="#" class="explore-btn">
 
-</div>
+                Explore Activity
 
-</div>
+                <i class="fa-solid fa-arrow-right"></i>
 
-<div class="activity-card">
+            </a>
 
-<img src="images/dance.jpg">
+            <!-- Navigation -->
 
-<div class="activity-overlay">
+            <div class="slider-controls">
 
-<h3>💃 Dance</h3>
+                <button id="prevSlide">
 
-<p>Move with confidence and creativity.</p>
+                    <i class="fa-solid fa-chevron-left"></i>
 
-</div>
+                </button>
 
-</div>
+                <div id="sliderDots" class="dots">
 
-<div class="activity-card">
+                    <!-- dots added with JavaScript -->
 
-<img src="images/modeling.jpg">
+                </div>
 
-<div class="activity-overlay">
+                <button id="nextSlide">
 
-<h3>📸 Modelling</h3>
+                    <i class="fa-solid fa-chevron-right"></i>
 
-<p>Discover confidence on and off the runway.</p>
+                </button>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-<div class="activity-card">
-
-<img src="images/filmmaking.jpg">
-
-<div class="activity-overlay">
-
-<h3>🎬 Film Making</h3>
-
-<p>Tell powerful stories through film.</p>
-
-</div>
-
-</div>
-
-<div class="activity-card">
-
-<img src="images/enterprenuership.jpg">
-
-<div class="activity-overlay">
-
-<h3>💼 Entrepreneurship</h3>
-
-<p>Transform ideas into successful ventures.</p>
-
-</div>
-
-</div>
-
-<div class="activity-card">
-
-<img src="images/agribusines.jpg">
-
-<div class="activity-overlay">
-
-<h3>🌱 Agribusiness</h3>
-
-<p>Learn modern farming and innovation.</p>
-
-</div>
-
-</div>
-
-<div class="activity-card">
-
-<img src="images/adventure.jpg">
-
-<div class="activity-overlay">
-
-<h3>🏕 Adventure</h3>
-
-<p>Camping, hiking and unforgettable experiences.</p>
-
-</div>
-
-</div>
-
-<div class="activity-card">
-
-<img src="images/networking.jpg">
-
-<div class="activity-overlay">
-
-<h3>🤝 Networking</h3>
-
-<p>Meet mentors and future leaders.</p>
-
-</div>
-
-</div>
-
-<div class="activity-card">
-
-<img src="images/mentors.jpg">
-
-<div class="activity-overlay">
-
-<h3>⭐ Leadership</h3>
-
-<p>Lead with courage and integrity.</p>
-
-</div>
-
-</div>
-
-<div class="activity-card">
-
-<img src="images/technology.jpg">
-
-<div class="activity-overlay">
-
-<h3>💻 Technology</h3>
-
-<p>Explore digital skills and innovation.</p>
-
-</div>
-
-</div>
-
-<div class="activity-card">
-
-<img src="images/service.jpg">
-
-<div class="activity-overlay">
-
-<h3>❤️ Community Service</h3>
-
-<p>Make a difference while giving back.</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 <!--=========================
@@ -1216,8 +1581,334 @@ menuBtn.onclick=function(){
 menu.classList.toggle("active");
 
 }
+/*===========================
+SHOWCASE DATA
+===========================*/
+
+const activities=[
+
+{
+title:"🎵 Art & Music",
+description:"Create, sing, perform and express yourself through music, instruments, painting and creative arts.",
+image:"images/music.jpg",
+color:"#8B5CF6"
+},
+
+{
+title:"⚽ Football & Sports",
+description:"Build teamwork, discipline and confidence while enjoying different sports.",
+image:"images/football.jpg",
+color:"#10B981"
+},
+
+{
+title:"💃 Dance",
+description:"Express yourself through movement and exciting choreography.",
+image:"images/dance.jpg",
+color:"#EC4899"
+},
+
+{
+title:"📸 Modelling",
+description:"Develop confidence, presentation and self-expression.",
+image:"images/modeling.jpg",
+color:"#F97316"
+},
+
+{
+title:"🎬 Film Making",
+description:"Learn script writing, filming, editing and storytelling.",
+image:"images/filmmaking.jpg",
+color:"#3B82F6"
+},
+
+{
+title:"💼 Entrepreneurship",
+description:"Transform your ideas into successful business opportunities.",
+image:"images/enterprenuership.jpg",
+color:"#F59E0B"
+},
+
+{
+title:"🌱 Agribusiness",
+description:"Discover modern farming and agribusiness innovation.",
+image:"images/agribusines.jpg",
+color:"#22C55E"
+},
+
+{
+title:"🏕 Adventure",
+description:"Camping, hiking and unforgettable outdoor experiences.",
+image:"images/adventure.jpg",
+color:"#0EA5E9"
+},
+
+{
+title:"🤝 Networking",
+description:"Meet inspiring mentors and build lifelong friendships.",
+image:"images/networking.jpg",
+color:"#06B6D4"
+},
+
+{
+title:"⭐ Leadership",
+description:"Become a confident and responsible young leader.",
+image:"images/mentors.jpg",
+color:"#6366F1"
+},
+
+{
+title:"💻 Technology",
+description:"Explore coding, innovation and digital creativity.",
+image:"images/technology.jpg",
+color:"#2563EB"
+},
+
+{
+title:"❤️ Community Service",
+description:"Serve your community while making meaningful impact.",
+image:"images/service.jpg",
+color:"#EF4444"
+}
+
+];
+
+let currentSlide=0;
+
+const img=document.getElementById("activityImage");
+const title=document.getElementById("activityTitle");
+const description=document.getElementById("activityDescription");
+
+const content=document.querySelector(".showcase-content");
+
+const showcase=document.querySelector(".showcase-container");
+
+const dotsContainer=document.getElementById("sliderDots");
+</script>
+<script>
+
+
+const activities=[
+
+{
+title:"🎵 Art & Music",
+description:"Create, sing, perform and express yourself through music, instruments, painting and creative arts.",
+image:"images/music.jpg",
+color:"#8B5CF6"
+},
+
+{
+title:"⚽ Football & Sports",
+description:"Build teamwork, discipline and confidence through exciting sporting activities.",
+image:"images/football.jpg",
+color:"#10B981"
+},
+
+{
+title:"💃 Dance",
+description:"Express yourself through movement, rhythm and creative performances.",
+image:"images/dance.jpg",
+color:"#EC4899"
+},
+
+{
+title:"📸 Modelling",
+description:"Develop confidence, presentation skills and self-expression.",
+image:"images/modeling.jpg",
+color:"#F97316"
+},
+
+{
+title:"🎬 Film Making",
+description:"Learn storytelling, filming and creative production skills.",
+image:"images/filmmaking.jpg",
+color:"#2563EB"
+},
+
+{
+title:"💼 Entrepreneurship",
+description:"Turn ideas into opportunities and learn business skills.",
+image:"images/enterprenuership.jpg",
+color:"#F59E0B"
+},
+
+{
+title:"🌱 Agribusiness",
+description:"Explore modern farming, innovation and sustainable agriculture.",
+image:"images/agribusines.jpg",
+color:"#22C55E"
+},
+
+{
+title:"🏕 Adventure",
+description:"Experience outdoor activities, exploration and unforgettable moments.",
+image:"images/adventure.jpg",
+color:"#0EA5E9"
+},
+
+{
+title:"🤝 Networking",
+description:"Connect with mentors, friends and inspiring young leaders.",
+image:"images/networking.jpg",
+color:"#06B6D4"
+},
+
+{
+title:"⭐ Leadership",
+description:"Grow confidence and become a positive young leader.",
+image:"images/mentors.jpg",
+color:"#6366F1"
+},
+
+{
+title:"💻 Technology",
+description:"Discover digital skills, innovation and future opportunities.",
+image:"images/technology.jpg",
+color:"#3B82F6"
+},
+
+{
+title:"❤️ Community Service",
+description:"Create impact and give back to your community.",
+image:"images/service.jpg",
+color:"#EF4444"
+}
+
+];
+
+
+let current=0;
+
+
+const image=document.getElementById("activityImage");
+
+const title=document.getElementById("activityTitle");
+
+const text=document.getElementById("activityDescription");
+
+const dotsBox=document.getElementById("sliderDots");
+
+const container=document.querySelector(".showcase-container");
+
+const content=document.querySelector(".showcase-content");
+
+
+
+activities.forEach((item,index)=>{
+
+
+let dot=document.createElement("span");
+
+dot.className="dot";
+
+
+if(index===0)
+dot.classList.add("active");
+
+
+dot.onclick=()=>showSlide(index);
+
+
+dotsBox.appendChild(dot);
+
+
+});
+
+
+
+const dots=document.querySelectorAll(".dot");
+
+
+
+function showSlide(index){
+
+
+image.classList.add("fade");
+
+content.classList.add("fade");
+
+
+setTimeout(()=>{
+
+
+current=index;
+
+
+image.src=activities[index].image;
+
+title.innerHTML=activities[index].title;
+
+text.innerHTML=activities[index].description;
+
+
+container.style.setProperty(
+"--accent-color",
+activities[index].color
+);
+
+
+dots.forEach(dot=>dot.classList.remove("active"));
+
+dots[index].classList.add("active");
+
+
+image.classList.remove("fade");
+
+content.classList.remove("fade");
+
+
+},400);
+
+
+}
+
+
+
+document.getElementById("nextSlide").onclick=()=>{
+
+current++;
+
+if(current>=activities.length)
+current=0;
+
+showSlide(current);
+
+};
+
+
+
+document.getElementById("prevSlide").onclick=()=>{
+
+
+current--;
+
+if(current<0)
+current=activities.length-1;
+
+
+showSlide(current);
+
+
+};
+
+
+
+setInterval(()=>{
+
+
+current++;
+
+if(current>=activities.length)
+current=0;
+
+
+showSlide(current);
+
+
+},6000);
+
+
 
 </script>
-
 </body>
 </html>
