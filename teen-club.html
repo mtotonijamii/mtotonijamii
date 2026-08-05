@@ -1233,8 +1233,7 @@ background:#6C63FF;
 /* MOBILE */
 
 
-@media(max-width:991px){
-
+@media (max-width:991px){
 
 .showcase-container{
 
@@ -1242,61 +1241,44 @@ grid-template-columns:1fr;
 
 }
 
-
 .showcase-image{
 
-height:400px;
+height:320px;
 
 }
 
+.showcase-image img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center;
+
+}
 
 .showcase-content{
 
-padding:45px 30px;
-
+padding:35px 25px;
 text-align:center;
 
 }
 
+.showcase-content h3{
+
+font-size:2rem;
+
+}
+
+.showcase-content p{
+
+font-size:1rem;
+line-height:1.7;
+
+}
 
 .explore-btn{
 
 margin:auto;
-
-}
-
-
-}
-
-
-
-@media(max-width:600px){
-
-
-.showcase{
-
-padding:70px 5%;
-
-}
-
-
-.showcase-heading h2{
-
-font-size:2.2rem;
-
-}
-
-
-.showcase-content h3{
-
-font-size:1.8rem;
-
-}
-
-
-.slider-controls{
-
-gap:15px;
 
 }
 
@@ -1571,124 +1553,14 @@ FOOTER
 </footer>
 
 <script>
+const menuBtn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
 
-const menuBtn=document.getElementById("menuBtn");
+menuBtn.onclick = function () {
+    menu.classList.toggle("active");
+};
 
-const menu=document.getElementById("menu");
-
-menuBtn.onclick=function(){
-
-menu.classList.toggle("active");
-
-}
-/*===========================
-SHOWCASE DATA
-===========================*/
-
-const activities=[
-
-{
-title:"🎵 Art & Music",
-description:"Create, sing, perform and express yourself through music, instruments, painting and creative arts.",
-image:"images/music.jpg",
-color:"#8B5CF6"
-},
-
-{
-title:"⚽ Football & Sports",
-description:"Build teamwork, discipline and confidence while enjoying different sports.",
-image:"images/football.jpg",
-color:"#10B981"
-},
-
-{
-title:"💃 Dance",
-description:"Express yourself through movement and exciting choreography.",
-image:"images/dance.jpg",
-color:"#EC4899"
-},
-
-{
-title:"📸 Modelling",
-description:"Develop confidence, presentation and self-expression.",
-image:"images/modeling.jpg",
-color:"#F97316"
-},
-
-{
-title:"🎬 Film Making",
-description:"Learn script writing, filming, editing and storytelling.",
-image:"images/filmmaking.jpg",
-color:"#3B82F6"
-},
-
-{
-title:"💼 Entrepreneurship",
-description:"Transform your ideas into successful business opportunities.",
-image:"images/enterprenuership.jpg",
-color:"#F59E0B"
-},
-
-{
-title:"🌱 Agribusiness",
-description:"Discover modern farming and agribusiness innovation.",
-image:"images/agribusines.jpg",
-color:"#22C55E"
-},
-
-{
-title:"🏕 Adventure",
-description:"Camping, hiking and unforgettable outdoor experiences.",
-image:"images/adventure.jpg",
-color:"#0EA5E9"
-},
-
-{
-title:"🤝 Networking",
-description:"Meet inspiring mentors and build lifelong friendships.",
-image:"images/networking.jpg",
-color:"#06B6D4"
-},
-
-{
-title:"⭐ Leadership",
-description:"Become a confident and responsible young leader.",
-image:"images/mentors.jpg",
-color:"#6366F1"
-},
-
-{
-title:"💻 Technology",
-description:"Explore coding, innovation and digital creativity.",
-image:"images/technology.jpg",
-color:"#2563EB"
-},
-
-{
-title:"❤️ Community Service",
-description:"Serve your community while making meaningful impact.",
-image:"images/service.jpg",
-color:"#EF4444"
-}
-
-];
-
-let currentSlide=0;
-
-const img=document.getElementById("activityImage");
-const title=document.getElementById("activityTitle");
-const description=document.getElementById("activityDescription");
-
-const content=document.querySelector(".showcase-content");
-
-const showcase=document.querySelector(".showcase-container");
-
-const dotsContainer=document.getElementById("sliderDots");
-</script>
-<script>
-
-
-const activities=[
+const activities = [
 
 {
 title:"🎵 Art & Music",
@@ -1776,138 +1648,121 @@ color:"#EF4444"
 
 ];
 
+let current = 0;
 
-let current=0;
+const image = document.getElementById("activityImage");
+const title = document.getElementById("activityTitle");
+const text = document.getElementById("activityDescription");
+const dotsBox = document.getElementById("sliderDots");
+const container = document.querySelector(".showcase-container");
+const content = document.querySelector(".showcase-content");
 
-
-const image=document.getElementById("activityImage");
-
-const title=document.getElementById("activityTitle");
-
-const text=document.getElementById("activityDescription");
-
-const dotsBox=document.getElementById("sliderDots");
-
-const container=document.querySelector(".showcase-container");
-
-const content=document.querySelector(".showcase-content");
-
-
+let autoSlide;
 
 activities.forEach((item,index)=>{
 
+    const dot=document.createElement("span");
+    dot.className="dot";
 
-let dot=document.createElement("span");
+    if(index===0){
+        dot.classList.add("active");
+    }
 
-dot.className="dot";
+    dot.onclick=()=>{
 
+        current=index;
 
-if(index===0)
-dot.classList.add("active");
+        showSlide(current);
 
+        restartAuto();
 
-dot.onclick=()=>showSlide(index);
+    };
 
-
-dotsBox.appendChild(dot);
-
+    dotsBox.appendChild(dot);
 
 });
 
-
-
 const dots=document.querySelectorAll(".dot");
-
-
 
 function showSlide(index){
 
+    image.classList.add("fade");
+    content.classList.add("fade");
 
-image.classList.add("fade");
+    setTimeout(()=>{
 
-content.classList.add("fade");
+        image.src=activities[index].image;
+        title.innerHTML=activities[index].title;
+        text.innerHTML=activities[index].description;
 
+        container.style.setProperty(
+            "--accent-color",
+            activities[index].color
+        );
 
-setTimeout(()=>{
+        dots.forEach(dot=>dot.classList.remove("active"));
+        dots[index].classList.add("active");
 
+        image.classList.remove("fade");
+        content.classList.remove("fade");
 
-current=index;
-
-
-image.src=activities[index].image;
-
-title.innerHTML=activities[index].title;
-
-text.innerHTML=activities[index].description;
-
-
-container.style.setProperty(
-"--accent-color",
-activities[index].color
-);
-
-
-dots.forEach(dot=>dot.classList.remove("active"));
-
-dots[index].classList.add("active");
-
-
-image.classList.remove("fade");
-
-content.classList.remove("fade");
-
-
-},400);
-
+    },350);
 
 }
 
+function nextSlide(){
 
+    current++;
+
+    if(current>=activities.length){
+        current=0;
+    }
+
+    showSlide(current);
+
+}
+
+function prevSlide(){
+
+    current--;
+
+    if(current<0){
+        current=activities.length-1;
+    }
+
+    showSlide(current);
+
+}
 
 document.getElementById("nextSlide").onclick=()=>{
 
-current++;
-
-if(current>=activities.length)
-current=0;
-
-showSlide(current);
+    nextSlide();
+    restartAuto();
 
 };
-
-
 
 document.getElementById("prevSlide").onclick=()=>{
 
-
-current--;
-
-if(current<0)
-current=activities.length-1;
-
-
-showSlide(current);
-
+    prevSlide();
+    restartAuto();
 
 };
 
+function startAuto(){
 
+    autoSlide=setInterval(nextSlide,6000);
 
-setInterval(()=>{
+}
 
+function restartAuto(){
 
-current++;
+    clearInterval(autoSlide);
+    startAuto();
 
-if(current>=activities.length)
-current=0;
-
+}
 
 showSlide(current);
-
-
-},6000);
-
-
+startAuto();
 
 </script>
 </body>
