@@ -1,402 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="About Mtoto Ni Jamii Foundation — nurturing potential, empowering young lives and building stronger communities.">
 <title>About Us | Mtoto Ni Jamii Foundation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <style>
-
-/*==============================
-        GENERAL
-==============================*/
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+:root{
+    --navy:#092C4C;
+    --deep-navy:#061F35;
+    --blue:#1769AA;
+    --blue-light:#EAF5FF;
+    --green:#238B57;
+    --green-light:#EAF8F0;
+    --gold:#E8B04B;
+    --white:#fff;
+    --off-white:#F8FBFC;
+    --text:#24323D;
+    --muted:#667580;
 }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",sans-serif;color:var(--text);line-height:1.7;background:var(--white)}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,90%);margin:auto}
 
-html{
-scroll-behavior:smooth;
+/* NAVBAR */
+.navbar{
+    position:fixed;top:0;left:0;width:100%;z-index:1000;
+    padding:18px 0;background:rgba(255,255,255,.93);
+    backdrop-filter:blur(16px);border-bottom:1px solid rgba(9,44,76,.06);
+    transition:.3s ease;
 }
-
-body{
-background:#ffffff;
-overflow-x:hidden;
-}
-
-.container{
-width:90%;
-max-width:1300px;
-margin:auto;
-}
-
-/*==============================
-        NAVIGATION
-==============================*/
-
-header{
-
-position:sticky;
-top:0;
-z-index:999;
-
-background:#ffffff;
-
-box-shadow:0 3px 12px rgba(0,0,0,.08);
-
-}
-
-header .container{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:18px 0;
-
-}
-
-.logo img{
-
-height:65px;
-
-}
-
-nav ul{
-
-display:flex;
-list-style:none;
-gap:35px;
-
-}
-
-nav ul li a{
-
-text-decoration:none;
-font-weight:500;
-font-size:16px;
-
-color:#333;
-
-transition:.3s;
-
-}
-
-nav ul li a:hover,
-nav ul li a.active{
-
-color:#2d8f3d;
-
-}
-
-.donate-btn{
-
-background:#2d8f3d;
-color:#fff;
-
-padding:14px 30px;
-
-border-radius:50px;
-
-text-decoration:none;
-
-font-weight:600;
-
-transition:.3s;
-
-}
-
-.donate-btn:hover{
-
-background:#145ca8;
-
-}
-
-/*==============================
-      MOBILE MENU
-==============================*/
-
-.menu-btn{
-
-display:none;
-
-font-size:30px;
-
-cursor:pointer;
-
-color:#145ca8;
-
-}
-
-@media(max-width:992px){
-
-.menu-btn{
-
-display:block;
-
-}
-
-.donate-btn{
-
-display:none;
-
-}
-
-nav{
-
-display:none;
-width:100%;
-
-}
-
-nav.active{
-
-display:block;
-
-animation:fade .4s;
-
-}
-
-nav ul{
-
-flex-direction:column;
-
-background:#fff;
-
-margin-top:20px;
-
-padding:20px;
-
-border-radius:15px;
-
-box-shadow:0 10px 25px rgba(0,0,0,.1);
-
-text-align:center;
-
-gap:20px;
-
-}
-
-header .container{
-
-flex-wrap:wrap;
-
-}
-
-}
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-transform:translateY(-15px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-
-/*==============================
-        ABOUT HERO
-==============================*/
-
+.navbar.scrolled{padding:12px 0;box-shadow:0 8px 30px rgba(6,31,53,.08)}
+.nav-container{width:min(1180px,90%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.logo img{width: 100px;Spx}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{position:relative;font-size:.9rem;font-weight:600;color:var(--navy);transition:.25s}
+.nav-links a:hover,.nav-links a.active{color:var(--green)}
+.nav-links a.active:after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--green);border-radius:10px}
+.support-nav{padding:10px 17px;border-radius:30px;color:#fff!important;background:var(--green)}
+.support-nav:hover{background:var(--navy)}
+.support-nav:after{display:none!important}
+.menu-btn{display:none;border:0;background:none;color:var(--navy);font-size:1.4rem;cursor:pointer}
+
+/* HERO */
 .about-hero{
-
-height:500px;
-
-background:url("images/about-banner.jpg") center center/cover;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-position:relative;
-
+    min-height:78vh;padding:180px 0 100px;display:flex;align-items:center;
+    color:#fff;
+    background:linear-gradient(90deg,rgba(6,31,53,.95),rgba(6,31,53,.78)),url(images/hero.jpg) center/cover;
 }
+.hero-content{max-width:850px}
+.eyebrow,.section-eyebrow{display:block;margin-bottom:15px;color:#9BE0B8;font-size:.75rem;font-weight:700;letter-spacing:.17em}
+.about-hero h1{max-width:800px;font-family:"Poppins",sans-serif;font-size:clamp(2.8rem,6vw,5.3rem);line-height:1.04;letter-spacing:-.04em;margin-bottom:24px}
+.about-hero h1 span,.section-title span,.support-card h2 span{color:#9BE0B8}
+.about-hero p{max-width:690px;color:rgba(255,255,255,.82);font-size:1.05rem}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;color:rgba(255,255,255,.68);font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.hero-meta span:not(:last-child):after{content:"";display:inline-block;width:4px;height:4px;margin:0 0 2px 12px;border-radius:50%;background:var(--gold)}
 
-.about-hero::before{
+/* SHARED */
+section{padding:105px 0}
+.section-eyebrow{color:var(--green)}
+.section-title{font-family:"Poppins",sans-serif;color:var(--navy);font-size:clamp(2rem,4vw,3.3rem);line-height:1.15;letter-spacing:-.035em}
+.section-title span{color:var(--green)}
+.accent-line{width:65px;height:4px;margin:22px 0;border-radius:10px;background:var(--green)}
 
-content:"";
+/* STORY */
+.our-story{background:#fff}
+.story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:75px;align-items:center}
+.story-image{position:relative;overflow:hidden;min-height:520px;border-radius:14px;background:var(--blue-light)}
+.story-image img{width:100%;height:100%;min-height:520px;object-fit:cover;transition:.7s}
+.story-image:hover img{transform:scale(1.035)}
+.story-image:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(6,31,53,.48),transparent 45%)}
+.story-label{position:absolute;z-index:2;left:24px;right:24px;bottom:22px;display:flex;justify-content:space-between;color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.12em}
+.story-copy{max-width:650px}
+.story-copy p{margin-bottom:13px;color:var(--muted)}
+.story-highlight{display:flex;align-items:center;gap:15px;margin-top:25px;padding-top:22px;border-top:1px solid #e7edf0}
+.story-highlight i{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:var(--green);background:var(--green-light)}
+.story-highlight strong{display:block;color:var(--navy);font-family:"Poppins",sans-serif;font-size:.95rem}
+.story-highlight span{display:block;color:var(--muted);font-size:.75rem}
 
-position:absolute;
+/* MISSION / VISION */
+.mission-vision{background:var(--off-white)}
+.mv-heading{max-width:700px;margin:0 auto 50px;text-align:center}
+.mv-heading p{margin-top:15px;color:var(--muted)}
+.mv-grid{display:grid;grid-template-columns:1fr 65px 1fr;align-items:stretch;gap:25px}
+.mv-card{padding:38px;background:#fff;border:1px solid #e4ebee;border-radius:14px;transition:.3s}
+.mv-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(6,31,53,.08)}
+.mv-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.mv-number,.value-number,.programme-number{color:#a8b5bd;font-size:.75rem;font-weight:700}
+.mv-icon,.value-icon,.programme-icon{display:grid;place-items:center;border-radius:50%}
+.mv-icon{width:48px;height:48px;color:var(--green);background:var(--green-light)}
+.mv-label{display:block;margin-bottom:10px;color:var(--green);font-size:.73rem;font-weight:700;letter-spacing:.15em}
+.mv-card h3{margin-bottom:14px;color:var(--navy);font-family:"Poppins",sans-serif;font-size:1.45rem;line-height:1.35}
+.mv-card p{color:var(--muted);font-size:.94rem}
+.mv-divider{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.mv-divider span{width:1px;flex:1;background:#d7e1e5}
+.mv-divider i{width:34px;height:34px;display:grid;place-items:center;border:1px solid #d7e1e5;border-radius:50%;color:var(--green);background:#fff;font-size:.75rem}
 
-top:0;
-left:0;
+/* VALUES */
+.our-values{background:#fff}
+.values-heading{max-width:700px;margin-bottom:48px}
+.values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.value-item{display:grid;grid-template-columns:42px 48px 1fr;align-items:center;gap:16px;padding:22px;border:1px solid #e5ecef;border-radius:12px;transition:.3s}
+.value-item:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(6,31,53,.05)}
+.value-icon{width:44px;height:44px;color:var(--green);background:var(--green-light)}
+.value-item h3{color:var(--navy);font-family:"Poppins",sans-serif;font-size:1rem}
+.value-item p{color:var(--muted);font-size:.82rem}
 
-width:100%;
-height:100%;
+/* PROGRAMMES */
+.programme-overview{background:var(--off-white)}
+.programme-heading{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end;margin-bottom:48px}
+.programme-heading p{max-width:500px;color:var(--muted)}
+.programme-list{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.programme-item{display:grid;grid-template-columns:45px 42px 1fr;gap:15px;align-items:start;padding:24px;background:#fff;border:1px solid #e4ebee;border-radius:12px;transition:.3s}
+.programme-item:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(6,31,53,.06)}
+.programme-icon{width:42px;height:42px;color:var(--blue);background:var(--blue-light)}
+.programme-item h3{margin-bottom:4px;color:var(--navy);font-family:"Poppins",sans-serif;font-size:1rem}
+.programme-item p{color:var(--muted);font-size:.82rem}
+.programme-link{margin-top:35px;text-align:center}
+.programme-link a{display:inline-flex;align-items:center;gap:10px;color:var(--green);font-size:.88rem;font-weight:700}
 
-background:rgba(15,61,124,.55);
+/* SUPPORT */
+.support-cause{background:#fff}
+.support-card{width:min(1100px,90%);margin:auto;padding:62px 70px;position:relative;overflow:hidden;border-radius:15px;background:var(--deep-navy);color:#fff}
+.support-content{position:relative;z-index:2;max-width:690px}
+.support-eyebrow{display:block;margin-bottom:14px;color:#9BE0B8;font-size:.73rem;font-weight:700;letter-spacing:.16em}
+.support-card h2{margin-bottom:16px;font-family:"Poppins",sans-serif;font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;letter-spacing:-.03em}
+.support-card p{max-width:610px;margin-bottom:27px;color:rgba(255,255,255,.7)}
+.support-button{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:30px;color:var(--navy);background:#fff;font-size:.85rem;font-weight:700;transition:.25s}
+.support-button:hover{color:#fff;background:var(--green)}
+.support-mark{position:absolute;right:55px;top:50%;transform:translateY(-50%);width:190px;height:190px;display:grid;place-items:center;border:1px solid rgba(155,224,184,.15);border-radius:50%;color:rgba(155,224,184,.35);font-size:4.5rem}
 
+/* FOOTER */
+.minimal-footer{padding:50px 0 22px;color:rgba(255,255,255,.8);background:var(--deep-navy)}
+.footer-inner{width:min(1180px,90%);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand img{width:58px}
+.footer-brand p{margin-top:9px;color:rgba(255,255,255,.58);font-size:.78rem}
+.footer-nav{display:flex;flex-wrap:wrap;gap:24px}
+.footer-nav a{color:rgba(255,255,255,.7);font-size:.78rem;transition:.2s}
+.footer-nav a:hover{color:#9BE0B8}
+.footer-bottom{width:min(1180px,90%);margin:18px auto 0;display:flex;justify-content:space-between;gap:20px;color:rgba(255,255,255,.42);font-size:.7rem}
+
+/* REVEAL */
+.js-enabled .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s cubic-bezier(.22,.61,.36,1)}
+.js-enabled .reveal.is-visible{opacity:1;transform:none}
+.delay-1.is-visible{transition-delay:.08s!important}
+.delay-2.is-visible{transition-delay:.16s!important}
+.delay-3.is-visible{transition-delay:.24s!important}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+    .story-grid{grid-template-columns:1fr;gap:45px}
+    .story-image,.story-image img{min-height:420px}
+    .mv-grid{grid-template-columns:1fr}
+    .mv-divider{flex-direction:row;height:45px}
+    .mv-divider span{height:1px;width:auto;flex:1}
+    .programme-heading{grid-template-columns:1fr;gap:20px}
 }
-
-.hero-content{
-
-position:relative;
-
-text-align:center;
-
-color:#fff;
-
-padding:20px;
-
-z-index:2;
-
+@media(max-width:800px){
+    .nav-links{position:absolute;top:100%;left:5%;width:90%;padding:20px;display:none;flex-direction:column;align-items:flex-start;gap:18px;border:1px solid #e5ecef;border-radius:12px;background:#fff;box-shadow:0 15px 35px rgba(6,31,53,.1)}
+    .nav-links.active{display:flex}
+    .nav-links a.active:after{display:none}
+    .menu-btn{display:block}
+    .support-nav{width:100%;text-align:center}
+    .about-hero{min-height:72vh;padding:155px 0 80px}
+    section{padding:80px 0}
+    .values-grid,.programme-list{grid-template-columns:1fr}
+    .support-card{padding:48px 35px}
+    .support-mark{opacity:.25;right:-45px}
+    .footer-inner,.footer-bottom{flex-direction:column;align-items:flex-start}
 }
-
-.hero-content h1{
-
-font-size:70px;
-
-font-weight:700;
-
-margin-bottom:20px;
-
+@media(max-width:520px){
+    .logo img{width:56px}
+    .about-hero h1{font-size:2.65rem}
+    .about-hero p{font-size:.94rem}
+    .story-image,.story-image img{min-height:350px}
+    .mv-card{padding:28px}
+    .value-item{grid-template-columns:32px 42px 1fr;gap:11px;padding:17px}
+    .programme-item{grid-template-columns:34px 40px 1fr;gap:11px;padding:18px}
+    .support-card{width:90%;padding:40px 25px}
+    .support-card h2{font-size:2rem}
+    .support-button{width:100%;justify-content:center}
 }
-
-.hero-content p{
-
-font-size:24px;
-
-font-weight:300;
-
-max-width:700px;
-
-margin:auto;
-
-line-height:1.8;
-
+@media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .js-enabled .reveal,.js-enabled .reveal.is-visible{opacity:1;transform:none;transition:none}
 }
-
-@media(max-width:768px){
-
-.about-hero{
-
-height:350px;
-
-}
-
-.hero-content h1{
-
-font-size:45px;
-
-}
-
-.hero-content p{
-
-font-size:18px;
-
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
 
-<!--==============================
-        NAVIGATION
-===============================-->
+<header class="navbar" id="siteHeader">
+<div class="nav-container">
+    <a href="index.html" class="logo" aria-label="Mtoto Ni Jamii Foundation home">
+        <img src="images/MnJlogo.png" alt="Mtoto Ni Jamii Foundation">
+    </a>
 
-<header>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
-<div class="container">
-
-<div class="logo">
-
-<img src="images/MnJlogo.png" alt="Logo">
-
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about-us.html" class="active">About Us</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="teen-club.html">Teen Club</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="support-nav">Support Us</a>
+    </nav>
 </div>
-
-<nav id="navbar">
-
-<ul>
-
-<li><a href="index.html">Home</a></li>
-
-<li><a href="about.html" class="active">About Us</a></li>
-
-<li><a href="#">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<a href="#" class="donate-btn">
-
-<i class="fa-solid fa-heart"></i>
-
-Donate
-
-</a>
-
-<div class="menu-btn" onclick="toggleMenu()">
-
-<i class="fa-solid fa-bars"></i>
-
-</div>
-
-</div>
-
 </header>
 
-<!--==============================
-        ABOUT HERO
-===============================-->
+<main>
 
 <section class="about-hero">
-
-<div class="hero-content">
-
-<h1>About Us</h1>
-
-<p>
-
-Empowering Every Child,<br>
-
-Building Stronger Communities.
-
-</p>
-
+<div class="container">
+<div class="hero-content reveal">
+    <span class="eyebrow">ABOUT MTOTO NI JAMII</span>
+    <h1>Growing young people into <span>possibilities.</span></h1>
+    <p>We create supportive spaces where children and young people can grow in confidence, discover their strengths and access opportunities that shape their future.</p>
+    <div class="hero-meta">
+        <span>Empower</span><span>Nurture</span><span>Transform</span>
+    </div>
 </div>
-
+</div>
 </section>
 
+<section class="our-story" id="our-story">
+<div class="container">
+<div class="story-grid">
+    <div class="story-image reveal">
+        <img src="images/MtotoniJamiiFoundation.jpg" alt="Mtoto Ni Jamii Foundation">
+        <div class="story-label"><span>OUR STORY</span><strong>01</strong></div>
+    </div>
+
+    <div class="story-copy reveal delay-1">
+        <span class="section-eyebrow">WHO WE ARE</span>
+        <h2 class="section-title">Every young person deserves a chance to <span>become.</span></h2>
+        <div class="accent-line"></div>
+        <p>Mtoto Ni Jamii Foundation works to promote the wellbeing, growth and potential of children and young people.</p>
+        <p>Through mentorship, talent development, practical opportunities, climate action and community outreach, we help young people feel valued, discover their strengths and move forward with confidence.</p>
+
+        <div class="story-highlight">
+            <i class="fa-solid fa-seedling"></i>
+            <div>
+                <strong>Nurturing potential, one young life at a time.</strong>
+                <span>Empower • Nurture • Transform</span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+<section class="mission-vision" id="mission-vision">
+<div class="container">
+<div class="mv-heading reveal">
+    <span class="section-eyebrow">WHAT GUIDES US</span>
+    <h2 class="section-title">Purpose with <span>intention.</span></h2>
+    <p>We believe supported young people help build stronger communities.</p>
+</div>
+
+<div class="mv-grid">
+<article class="mv-card reveal delay-1">
+    <div class="mv-top"><span class="mv-number">01</span><div class="mv-icon"><i class="fa-solid fa-compass"></i></div></div>
+    <span class="mv-label">OUR MISSION</span>
+    <h3>To nurture, empower and create opportunities for young people to thrive.</h3>
+    <p>We promote wellbeing, guidance, talent and practical opportunities that help young people grow.</p>
+</article>
+
+<div class="mv-divider reveal delay-2"><span></span><i class="fa-solid fa-plus"></i><span></span></div>
+
+<article class="mv-card reveal delay-3">
+    <div class="mv-top"><span class="mv-number">02</span><div class="mv-icon"><i class="fa-solid fa-eye"></i></div></div>
+    <span class="mv-label">OUR VISION</span>
+    <h3>A generation of confident, capable and empowered young people.</h3>
+    <p>We envision young people with the support and opportunity to discover their potential and shape their future.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="our-values" id="values">
+<div class="container">
+<div class="values-heading reveal">
+    <span class="section-eyebrow">WHAT WE STAND FOR</span>
+    <h2 class="section-title">Values that shape <span>our work.</span></h2>
+</div>
+
+<div class="values-grid">
+<article class="value-item reveal delay-1"><span class="value-number">01</span><div class="value-icon"><i class="fa-solid fa-heart"></i></div><div><h3>Compassion</h3><p>We listen, care and respond with empathy.</p></div></article>
+<article class="value-item reveal delay-2"><span class="value-number">02</span><div class="value-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><div><h3>Dignity</h3><p>Every young person deserves respect and a voice.</p></div></article>
+<article class="value-item reveal delay-1"><span class="value-number">03</span><div class="value-icon"><i class="fa-solid fa-arrow-up-right-dots"></i></div><div><h3>Growth</h3><p>We encourage learning, confidence and development.</p></div></article>
+<article class="value-item reveal delay-2"><span class="value-number">04</span><div class="value-icon"><i class="fa-solid fa-people-group"></i></div><div><h3>Community</h3><p>Meaningful change grows through connection.</p></div></article>
+<article class="value-item reveal delay-1"><span class="value-number">05</span><div class="value-icon"><i class="fa-solid fa-lightbulb"></i></div><div><h3>Opportunity</h3><p>We open pathways to explore potential.</p></div></article>
+<article class="value-item reveal delay-2"><span class="value-number">06</span><div class="value-icon"><i class="fa-solid fa-handshake"></i></div><div><h3>Collaboration</h3><p>We work with others to create lasting impact.</p></div></article>
+</div>
+</div>
+</section>
+
+<section class="programme-overview" id="programmes">
+<div class="container">
+<div class="programme-heading reveal">
+    <div>
+        <span class="section-eyebrow">OUR PROGRAMMES</span>
+        <h2 class="section-title">Creating pathways for <span>young people to thrive.</span></h2>
+    </div>
+    <p>Six areas of work designed to support growth, opportunity and stronger communities.</p>
+</div>
+
+<div class="programme-list">
+<article class="programme-item reveal delay-1"><span class="programme-number">01</span><div class="programme-icon"><i class="fa-solid fa-heart-circle-check"></i></div><div><h3>Child & Teen Wellness</h3><p>Supporting wellbeing, confidence and healthy development.</p></div></article>
+<article class="programme-item reveal delay-2"><span class="programme-number">02</span><div class="programme-icon"><i class="fa-solid fa-user-group"></i></div><div><h3>Mentorship & Guidance</h3><p>Providing guidance, encouragement and supportive spaces.</p></div></article>
+<article class="programme-item reveal delay-1"><span class="programme-number">03</span><div class="programme-icon"><i class="fa-solid fa-palette"></i></div><div><h3>Talent Development</h3><p>Helping young people explore creativity, arts and sports.</p></div></article>
+<article class="programme-item reveal delay-2"><span class="programme-number">04</span><div class="programme-icon"><i class="fa-solid fa-seedling"></i></div><div><h3>Agribusiness</h3><p>Building practical skills and entrepreneurship through agriculture.</p></div></article>
+<article class="programme-item reveal delay-1"><span class="programme-number">05</span><div class="programme-icon"><i class="fa-solid fa-earth-africa"></i></div><div><h3>Climate Action</h3><p>Encouraging environmental responsibility and participation.</p></div></article>
+<article class="programme-item reveal delay-2"><span class="programme-number">06</span><div class="programme-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><div><h3>Community Outreach</h3><p>Connecting with communities to create meaningful impact.</p></div></article>
+</div>
+
+<div class="programme-link reveal delay-3">
+<a href="index.html#programs">Explore Our Programmes <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+</section>
+
+<section class="support-cause" id="support">
+<div class="support-card reveal">
+<div class="support-content">
+    <span class="support-eyebrow">BE PART OF THE JOURNEY</span>
+    <h2>Every young person deserves <span>a chance to thrive.</span></h2>
+    <p>Your support helps us create spaces where young people can learn, grow and discover their potential.</p>
+    <a href="contact.html" class="support-button">Support the Cause <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+<div class="support-mark"><i class="fa-solid fa-seedling"></i></div>
+</div>
+</section>
+
+</main>
+
+<footer class="minimal-footer">
+<div class="footer-inner">
+    <div class="footer-brand">
+        <img src="images/MnJlogo.png" alt="Mtoto Ni Jamii Foundation">
+        <p>Nurturing potential. Empowering young lives.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="teen-club.html">Teen Club</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</div>
+<div class="footer-bottom">
+    <span>© 2026 Mtoto Ni Jamii Foundation. All rights reserved.</span>
+    <span>Every child. Every dream. Every possibility.</span>
+</div>
+</footer>
+
 <script>
+document.documentElement.classList.add("js-enabled");
 
-function toggleMenu(){
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+const header = document.getElementById("siteHeader");
 
-document.getElementById("navbar").classList.toggle("active");
+menuBtn.addEventListener("click", function(){
+    navLinks.classList.toggle("active");
+    const isOpen = navLinks.classList.contains("active");
+    menuBtn.setAttribute("aria-expanded", isOpen);
+    menuBtn.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
 
+    const icon = menuBtn.querySelector("i");
+    icon.classList.toggle("fa-bars", !isOpen);
+    icon.classList.toggle("fa-xmark", isOpen);
+});
+
+document.querySelectorAll("#navLinks a").forEach(function(link){
+    link.addEventListener("click", function(){
+        navLinks.classList.remove("active");
+        menuBtn.setAttribute("aria-expanded","false");
+        menuBtn.setAttribute("aria-label","Open navigation");
+        const icon = menuBtn.querySelector("i");
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    });
+});
+
+window.addEventListener("scroll", function(){
+    header.classList.toggle("scrolled", window.scrollY > 20);
+});
+
+const revealItems = document.querySelectorAll(".reveal");
+
+if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    revealItems.forEach(item => item.classList.add("is-visible"));
+}else{
+    const observer = new IntersectionObserver(function(entries, obs){
+        entries.forEach(function(entry){
+            if(entry.isIntersecting){
+                entry.target.classList.add("is-visible");
+                obs.unobserve(entry.target);
+            }
+        });
+    },{threshold:.12,rootMargin:"0px 0px -50px 0px"});
+
+    revealItems.forEach(item => observer.observe(item));
 }
-
 </script>
 
 </body>
-
 </html>
